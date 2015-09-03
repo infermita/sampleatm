@@ -163,6 +163,7 @@ static void VideoManuale::on_pad_added(GstElement *element, GstPad *pad, gpointe
 static gboolean VideoManuale::cb_print_position (GstElement *pipeline)
 {
 
+    /*
     GstFormat fmt = GST_FORMAT_TIME;
     gint64 pos, len;
     gboolean b;

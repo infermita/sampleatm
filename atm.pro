@@ -26,7 +26,7 @@ greaterThan(QT_MAJOR_VERSION, 4){
     PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10
 #}
 
-TARGET = atm
+TARGET = sampleatm
 TEMPLATE = app
 
 CONFIG+=debug
