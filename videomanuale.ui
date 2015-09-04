@@ -70,16 +70,16 @@ QLabel {border:none }
     <rect>
      <x>60</x>
      <y>30</y>
-     <width>351</width>
-     <height>331</height>
+     <width>640</width>
+     <height>480</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="play">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>380</y>
+     <x>720</x>
+     <y>410</y>
      <width>171</width>
      <height>101</height>
     </rect>

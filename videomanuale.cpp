@@ -1,11 +1,12 @@
 #include "videomanuale.h"
 #include "ui_videomanuale.h"
 #include "mainwindow.h"
-//#include "lib/player.h"
+#include "lib/player.h"
 #include <QDebug>
 #include <QUrl>
 #include <QDir>
 #include <QVBoxLayout>
+#include <QGst/Init>
 /*
 #if QT_VERSION > 0x50000
 #include <QtWebKit>
@@ -57,9 +58,19 @@ void VideoManuale::setWidget(QWidget *parent)
     //ui->webView->load(QUrl("http://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_autoplay"));
     //ui->webView->load(QUrl("https://html5test.com/"));
     //Play();
+    //QWidget *pp = new QWidget(ui->video);
+    //pp->setFixedSize(640,480);
+
+    //MediaApp *media = new MediaApp(pp);
+    QGst::init(0, 0);
+    m_play = new Player(ui->video);
+    m_play->setFixedSize(640,480);
+    //pl->setUri("/home/alberto/test.mp4");
+
+    //pp->show();
     /*
-    m_play = new Player(this);
-    m_play->setStyleSheet("");
+    m_play = new Player();
+    //m_play->setStyleSheet("");
 
     QVBoxLayout *appLayout = new QVBoxLayout(this);
     appLayout->setContentsMargins(0, 0, 0, 0);
@@ -83,6 +94,8 @@ void VideoManuale::setWidget(QWidget *parent)
 
     QGst::State newState = m_play->state();
     m_playButton->setEnabled(newState != QGst::StatePlaying);
+
+    m_play->show();
     */
 
 }
@@ -151,13 +164,13 @@ GstElement *VideoManuale::find_video_sink(void){
     return NULL;
 
 }
-
+/*
 static void VideoManuale::on_pad_added(GstElement *element, GstPad *pad, gpointer data){
 
 
     GstPad *sinkpad;
     GstElement *s = (GstElement *) data;
-    /* We can now link this pad with the vorbis-decoder sink pad */
+
     g_print ("Dynamic pad created, linking decoder/sink\n");
     sinkpad = gst_element_get_static_pad (s, "sink");
     gst_pad_link (pad, sinkpad);
@@ -178,11 +191,15 @@ static gboolean VideoManuale::cb_print_position (GstElement *pipeline)
         g_print ("Time: %" GST_TIME_FORMAT " / %" GST_TIME_FORMAT "\r",
         GST_TIME_ARGS (pos), GST_TIME_ARGS (len));
     }
-    /* call me again */
+
     return TRUE;
 }
+*/
 void VideoManuale::Play()
 {
+    m_play->setUri("/home/alberto/test.mp4");
+    m_play->play();
+    /*
     gst_init (0, 0);
 
     GstBus *bus;
@@ -203,9 +220,9 @@ void VideoManuale::Play()
 
     if (!gst_element_link(src, dec)) {
     g_print ("Failed to link some elements!\n");
-    return -1;
+    //return -1;
     }
-    g_signal_connect (dec, "pad-added", G_CALLBACK (VideoManuale::on_pad_added), sink);
+    //g_signal_connect (dec, "pad-added", G_CALLBACK (VideoManuale::on_pad_added), sink);
 
     WId xwinid = ui->video->winId();
 
@@ -228,7 +245,7 @@ void VideoManuale::Play()
 
     }
     */
-    timer = g_timeout_add (1000, (GSourceFunc) cb_print_position, pipeline);
+    //timer = g_timeout_add (1000, (GSourceFunc) cb_print_position, pipeline);
 
 
 }

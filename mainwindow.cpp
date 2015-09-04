@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //setWidget(ObStrumenti,strumenti);
 
-
+    /*
     Dao *d = new Dao();
 
     BeanDaoGen *bg;
@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
     BeanTram *bt = static_cast<BeanTram*>(bg);
     //if(bt!=0)
         ui->matricola->setText(bt->numeroTram);
-
+    */
 
 
 }

@@ -5,7 +5,7 @@
 #include <gst/gst.h>
 #include <QToolButton>
 #include "dynamicwidget.h"
-//#include "lib/player.h"
+#include "lib/player.h"
 namespace Ui {
 class VideoManuale;
 }
@@ -30,11 +30,12 @@ private:
     Ui::VideoManuale *ui;
     GstElement *find_video_sink (void);
     //Player *m_play;
-    //QToolButton *m_playButton;
-    static void on_pad_added (GstElement *element,GstPad *pad,gpointer data);
-    static gboolean cb_print_position (GstElement *pipeline);
+    QToolButton *m_playButton;
+    //static void on_pad_added (GstElement *element,GstPad *pad,gpointer data);
+    //static gboolean cb_print_position (GstElement *pipeline);
     GstElement *pipeline;
     guint timer;
+    Player *m_play;
 
 
 
