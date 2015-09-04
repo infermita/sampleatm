@@ -197,7 +197,7 @@ static gboolean VideoManuale::cb_print_position (GstElement *pipeline)
 */
 void VideoManuale::Play()
 {
-    m_play->setUri("/home/alberto/test.mp4");
+    m_play->setUri("/etc/atm/test.mp4");
     m_play->play();
     /*
     gst_init (0, 0);
