@@ -89,6 +89,10 @@ void VideoManuale::setWidget(QWidget *parent)
 
 void VideoManuale::Exit()
 {
+    g_source_remove(timer);
+    gst_element_set_state (pipeline,GST_STATE_PAUSED);
+    gst_element_set_state (pipeline,GST_STATE_NULL);
+    gst_object_unref (pipeline);
     MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObCondotta(),MainWindow::getInstance()->condotta());
 
 }
@@ -163,7 +167,7 @@ static void VideoManuale::on_pad_added(GstElement *element, GstPad *pad, gpointe
 static gboolean VideoManuale::cb_print_position (GstElement *pipeline)
 {
 
-    /*
+
     GstFormat fmt = GST_FORMAT_TIME;
     gint64 pos, len;
     gboolean b;
@@ -184,13 +188,13 @@ void VideoManuale::Play()
     GstBus *bus;
     GstMessage *msg;
 
-    GstElement *pipeline = gst_pipeline_new ("xvoverlay");
+    pipeline = gst_pipeline_new ("xvoverlay");
     GstElement *src = gst_element_factory_make ("filesrc", NULL);
 
     GstElement *dec = gst_element_factory_make ("decodebin", NULL);
     GstElement *sink = find_video_sink ();
 
-    g_object_set(G_OBJECT(src), "location", "./test.mp4", NULL);
+    g_object_set(G_OBJECT(src), "location", "/etc/atm/test.mp4", NULL);
     if (sink == NULL)
       g_error ("Couldn't find a working video sink.");
 
@@ -224,7 +228,7 @@ void VideoManuale::Play()
 
     }
     */
-    g_timeout_add (100, (GSourceFunc) cb_print_position, pipeline);
+    timer = g_timeout_add (1000, (GSourceFunc) cb_print_position, pipeline);
 
 
 }

@@ -33,6 +33,8 @@ private:
     //QToolButton *m_playButton;
     static void on_pad_added (GstElement *element,GstPad *pad,gpointer data);
     static gboolean cb_print_position (GstElement *pipeline);
+    GstElement *pipeline;
+    guint timer;
 
 
 
