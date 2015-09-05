@@ -26,7 +26,7 @@ greaterThan(QT_MAJOR_VERSION, 4){
     PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
 #}
 
-TARGET = sampleatm
+TARGET = atm
 TEMPLATE = app
 
 CONFIG+=debug
@@ -52,7 +52,7 @@ SOURCES +=\
     lib/bean/beantram.cpp \
     lib/messagewindow.cpp \
     videomanuale.cpp \
-    lib/player.cpp
+    #lib/player.cpp
     #lib/player.cpp
 
 HEADERS  += mainwindow.h \
@@ -73,7 +73,7 @@ HEADERS  += mainwindow.h \
     lib/bean/beantram.h \
     lib/messagewindow.h \
     videomanuale.h \
-    lib/player.h
+    #lib/player.h
     #lib/player.h
 
 FORMS    += mainwindow.ui \

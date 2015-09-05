@@ -5,7 +5,7 @@
 #include <gst/gst.h>
 #include <QToolButton>
 #include "dynamicwidget.h"
-#include "lib/player.h"
+//#include "lib/player.h"
 namespace Ui {
 class VideoManuale;
 }
@@ -28,9 +28,8 @@ private slots:
 
 private:
     Ui::VideoManuale *ui;
-    GstElement *find_video_sink (void);
     QToolButton *m_playButton;
-    Player *m_play;
+    //Player *m_play;
 
 
 
