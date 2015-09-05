@@ -29,12 +29,7 @@ private slots:
 private:
     Ui::VideoManuale *ui;
     GstElement *find_video_sink (void);
-    //Player *m_play;
     QToolButton *m_playButton;
-    //static void on_pad_added (GstElement *element,GstPad *pad,gpointer data);
-    //static gboolean cb_print_position (GstElement *pipeline);
-    GstElement *pipeline;
-    guint timer;
     Player *m_play;
 
 
