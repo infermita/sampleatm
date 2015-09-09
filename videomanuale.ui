@@ -88,7 +88,24 @@ QLabel {border:none }
     <string>play</string>
    </property>
   </widget>
+  <widget class="Phonon::VideoPlayer" name="videoPlayer">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>90</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Phonon::VideoPlayer</class>
+   <extends>QWidget</extends>
+   <header location="global">phonon/videoplayer.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
