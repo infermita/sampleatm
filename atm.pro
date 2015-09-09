@@ -6,10 +6,12 @@
 
 QT       += core gui
 QT       += sql
+QT       += phonon
+
 
 DEFINES  += QT_DISABLE_DEPRECATED_BEFORE=0x000000
-DEFINES  += QT_QPA_PLATFORM=eglfs
-DEFINES  += FB_MULTI_BUFFER=24
+#DEFINES  += QT_QPA_PLATFORM=eglfs
+#DEFINES  += FB_MULTI_BUFFER=24
 
 greaterThan(QT_MAJOR_VERSION, 4){
     QT += widgets
@@ -22,8 +24,8 @@ greaterThan(QT_MAJOR_VERSION, 4){
     #QT += webkit
     #INCLUDEPATH += /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/include/QtGStreamer
     #PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
-    INCLUDEPATH += /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/include/QtGStreamer
-    PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
+    #INCLUDEPATH += /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/include/QtGStreamer
+    #PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
 #}
 
 TARGET = atm

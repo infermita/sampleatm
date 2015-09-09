@@ -1,11 +1,12 @@
 #include "videomanuale.h"
 #include "ui_videomanuale.h"
 #include "mainwindow.h"
-#include "lib/player.h"
+//#include "lib/player.h"
 #include <QDebug>
 #include <QUrl>
 #include <QDir>
 #include <QVBoxLayout>
+
 //#include <QGst/Init>
 
 VideoManuale::VideoManuale()
@@ -26,6 +27,7 @@ void VideoManuale::setWidget(QWidget *parent)
     ui->setupUi(parent);
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
     QObject::connect(ui->play, SIGNAL (clicked()),this, SLOT (Play()),Qt::DirectConnection);
+
     /*
     QGst::init(0, 0);
     m_play = new Player(ui->video);
@@ -43,6 +45,9 @@ void VideoManuale::Exit()
 
 void VideoManuale::Play()
 {
+    //Phonon::MediaSource *m = new Phonon::MediaSource("/home/alberto/test.mp4");
+
+    ui->videoPlayer->play(Phonon::MediaSource("/etc/atm/test.mp4"));
     //m_play->setUri("/etc/atm/test.mp4");
     //m_play->play();
 
