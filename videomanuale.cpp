@@ -60,7 +60,7 @@ void VideoManuale::Play()
 
 
 }
-void VideoManuale::Play()
+void VideoManuale::Stop()
 {
     libvlc_media_player_stop(media_player);
 }
