@@ -6,6 +6,8 @@
 #include <QUrl>
 #include <QDir>
 #include <QVBoxLayout>
+#include <stdio.h>
+#include <string.h>
 
 
 //#include <QGst/Init>
@@ -31,7 +33,8 @@ void VideoManuale::setWidget(QWidget *parent)
     QObject::connect(ui->stop, SIGNAL (clicked()),this, SLOT (Stop()),Qt::DirectConnection);
 
     inst = libvlc_new(0, 0);
-    media_player = libvlc_media_player_new(inst);
+
+    //media_player = libvlc_media_player_new(inst);
     /*
     QGst::init(0, 0);
     m_play = new Player(ui->video);
@@ -50,19 +53,41 @@ void VideoManuale::Exit()
 void VideoManuale::Play()
 {
     libvlc_media_t *m;
+    // = malloc(10*sizeof(libvlc_media_player_t));
     //ui->videoPlayer->
     //ui->videoPlayer->play(Phonon::MediaSource("/home/alberto/test.mp4"));
+    /*
     libvlc_media_player_set_xwindow(media_player, ui->video->winId());
-    m = libvlc_media_new_path(inst, "/etc/atm/test.mp4");
+    m = libvlc_media_new_path(inst, "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov");
     libvlc_media_player_set_media(media_player, m);
     libvlc_media_release(m);
     libvlc_media_player_play(media_player);
+    */
+    for(i = 0 ; i < num;i++)
+        media_players[i] = libvlc_media_player_new(inst);
+
+    for(i = 0 ; i < num;i++){
+
+        if(i==0){
+            libvlc_media_player_set_xwindow(media_players[i], ui->video->winId());
+        }else{
+            libvlc_media_player_set_xwindow(media_players[i], ui->video2->winId());
+        }
+        m = libvlc_media_new_path(inst, "rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov");
+        libvlc_media_player_set_media(media_players[i], m);
+        libvlc_media_release(m);
+        libvlc_media_player_play(media_players[i]);
+
+    }
+
 
 
 }
 void VideoManuale::Stop()
 {
-    libvlc_media_player_stop(media_player);
+     for(i = 0 ; i < num;i++){
+         libvlc_media_player_stop(media_players[i]);
+     }
 }
 
 

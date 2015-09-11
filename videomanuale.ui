@@ -70,8 +70,8 @@ QLabel {border:none }
     <rect>
      <x>60</x>
      <y>30</y>
-     <width>640</width>
-     <height>480</height>
+     <width>320</width>
+     <height>240</height>
     </rect>
    </property>
   </widget>
@@ -99,6 +99,16 @@ QLabel {border:none }
    </property>
    <property name="text">
     <string>stop</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="video2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>280</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
    </property>
   </widget>
  </widget>

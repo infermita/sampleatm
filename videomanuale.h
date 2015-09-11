@@ -32,8 +32,12 @@ private:
     Ui::VideoManuale *ui;
     QToolButton *m_playButton;
     //Player *m_play;
-    libvlc_media_player_t *media_player;
+    //libvlc_media_player_t *media_player;
+    const static int num = 2;
+    int i;
+    libvlc_media_player_t *media_players[num];
     libvlc_instance_t *inst;
+
 
 
 
