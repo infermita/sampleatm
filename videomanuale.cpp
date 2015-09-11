@@ -53,7 +53,7 @@ void VideoManuale::Play()
     //ui->videoPlayer->
     //ui->videoPlayer->play(Phonon::MediaSource("/home/alberto/test.mp4"));
     libvlc_media_player_set_xwindow(media_player, ui->video->winId());
-    m = libvlc_media_new_path(inst, "/home/alberto/test.mp4");
+    m = libvlc_media_new_path(inst, "/etc/atm/test.mp4");
     libvlc_media_player_set_media(media_player, m);
     libvlc_media_release(m);
     libvlc_media_player_play(media_player);
