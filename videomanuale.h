@@ -6,6 +6,7 @@
 #include <QToolButton>
 #include "dynamicwidget.h"
 //#include "lib/player.h"
+#include <vlc/vlc.h>
 namespace Ui {
 class VideoManuale;
 }
@@ -24,12 +25,15 @@ public:
 private slots:
         void Exit();
         void Play();
+        void Stop();
 
 
 private:
     Ui::VideoManuale *ui;
     QToolButton *m_playButton;
     //Player *m_play;
+    libvlc_media_player_t *media_player;
+    libvlc_instance_t *inst;
 
 
 

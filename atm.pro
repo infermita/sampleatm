@@ -6,7 +6,7 @@
 
 QT       += core gui
 QT       += sql
-QT       += phonon
+#QT       += phonon
 
 
 DEFINES  += QT_DISABLE_DEPRECATED_BEFORE=0x000000
@@ -26,6 +26,8 @@ greaterThan(QT_MAJOR_VERSION, 4){
     #PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
     #INCLUDEPATH += /usr/include/gstreamer-0.10 /usr/include/glib-2.0 /usr/include/QtGStreamer
     #PKGCONFIG += gstreamer-0.10 gstreamer-base-0.10 glib-2.0 gstreamer-interfaces-0.10 QtGStreamer-0.10 QtGStreamerUi-0.10
+    INCLUDEPATH += /usr/include/vlc
+    PKGCONFIG += libvlc
 #}
 
 TARGET = atm

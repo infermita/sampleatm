@@ -7,6 +7,7 @@
 #include <QDir>
 #include <QVBoxLayout>
 
+
 //#include <QGst/Init>
 
 VideoManuale::VideoManuale()
@@ -27,7 +28,10 @@ void VideoManuale::setWidget(QWidget *parent)
     ui->setupUi(parent);
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
     QObject::connect(ui->play, SIGNAL (clicked()),this, SLOT (Play()),Qt::DirectConnection);
+    QObject::connect(ui->stop, SIGNAL (clicked()),this, SLOT (Stop()),Qt::DirectConnection);
 
+    inst = libvlc_new(0, 0);
+    media_player = libvlc_media_player_new(inst);
     /*
     QGst::init(0, 0);
     m_play = new Player(ui->video);
@@ -45,13 +49,20 @@ void VideoManuale::Exit()
 
 void VideoManuale::Play()
 {
-    //Phonon::MediaSource *m = new Phonon::MediaSource("/home/alberto/test.mp4");
+    libvlc_media_t *m;
+    //ui->videoPlayer->
+    //ui->videoPlayer->play(Phonon::MediaSource("/home/alberto/test.mp4"));
+    libvlc_media_player_set_xwindow(media_player, ui->video->winId());
+    m = libvlc_media_new_path(inst, "/home/alberto/test.mp4");
+    libvlc_media_player_set_media(media_player, m);
+    libvlc_media_release(m);
+    libvlc_media_player_play(media_player);
 
-    ui->videoPlayer->play(Phonon::MediaSource("/etc/atm/test.mp4"));
-    //m_play->setUri("/etc/atm/test.mp4");
-    //m_play->play();
 
-
+}
+void VideoManuale::Play()
+{
+    libvlc_media_player_stop(media_player);
 }
 
 
