@@ -21,12 +21,13 @@ public:
     ~VideoManuale();
     void setWidget(QWidget *parent);
     VideoManuale(const VideoManuale &t);
-    static VideoManuale* getInstance();
+
 
 private slots:
         void Exit();
         void Play();
         void Stop();
+        void SlotBuffer(int idWin,int val);
 
 
 private:
@@ -38,8 +39,12 @@ private:
     int i;
     libvlc_media_player_t *media_players[num];
     libvlc_instance_t *inst;
+    libvlc_event_manager_t *p_e[num];
     static void callbacks( const libvlc_event_t* event, void* self );
-    static VideoManuale* instance;
+
+
+signals:
+    void SignalBuffer(int idWin,int val);
 
 
 };

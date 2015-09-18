@@ -1,7 +1,7 @@
 #include "videomanuale.h"
 #include "ui_videomanuale.h"
 #include "mainwindow.h"
-//#include "lib/player.h"
+#include "lib/bean/videobean.h"
 #include <QDebug>
 #include <QUrl>
 #include <QDir>
@@ -9,20 +9,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
-
-
-
-//#include <QGst/Init>
-
-VideoManuale* VideoManuale::instance = 0;
-
-
-VideoManuale* VideoManuale::getInstance(){
-    if(instance==0){
-        instance = new VideoManuale;
-    }
-    return instance;
-}
 
 VideoManuale::VideoManuale()
 {
@@ -39,36 +25,16 @@ VideoManuale::VideoManuale(const VideoManuale &t){
 void VideoManuale::setWidget(QWidget *parent)
 {
     ui = new Ui::VideoManuale;
-    instance = this;
     ui->setupUi(parent);
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
     QObject::connect(ui->play, SIGNAL (clicked()),this, SLOT (Play()),Qt::DirectConnection);
     QObject::connect(ui->stop, SIGNAL (clicked()),this, SLOT (Stop()),Qt::DirectConnection);
+    QObject::connect(this, SIGNAL (SignalBuffer(int,int)),this, SLOT (SlotBuffer(int,int)),Qt::DirectConnection);
 
-    const char * const argv[] = {
-            "-I", "dummy",    // Don't use any interface
-            "--ignore-config",    // Don't use VLC's config
-            "--no-xlib", "--no-audio"
-
-        };
-
-    //"--demux=h264"
-
-    inst = libvlc_new(sizeof(argv) / sizeof(argv[0]), argv);
-
-
-    //media_player = libvlc_media_player_new(inst);
-    /*
-    QGst::init(0, 0);
-    m_play = new Player(ui->video);
-    m_play->setFixedSize(640,480);
-    */
 }
 
 void VideoManuale::Exit()
 {
-    //m_play->stop();
-    //delete m_play;
     Stop();
     MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObCondotta(),MainWindow::getInstance()->condotta());
 
@@ -76,9 +42,24 @@ void VideoManuale::Exit()
 
 void VideoManuale::Play()
 {
-    libvlc_event_manager_t *p_e;
+
     libvlc_media_t *m_media;
     unsigned int idWin;
+    QWidget *tmpWid;
+    QString tmpWidName;
+
+    const char * const argv[] = {
+            "-I", "dummy",    // Don't use any interface
+            "--ignore-config",    // Don't use VLC's config
+            "--no-xlib","--no-audio"
+
+        };
+
+    //"--demux=h264"
+    //
+
+    inst = libvlc_new(sizeof(argv) / sizeof(argv[0]), argv);
+
     for(i = 0 ; i < num;i++){
 
         m_media = libvlc_media_new_location(inst, "rtsp://192.168.2.5:2000");
@@ -86,18 +67,21 @@ void VideoManuale::Play()
         media_players[i] = libvlc_media_player_new_from_media(m_media);
         libvlc_media_release(m_media);
 
-        if(i==0){
-            idWin = ui->video->winId() ;
-        }else{
-            idWin = ui->video2->winId() ;
-        }
+        tmpWidName = QString("video%1").arg(i);
+        tmpWid = MainWindow::getInstance()->findChild<QWidget *>(tmpWidName);
 
-        p_e = libvlc_media_player_event_manager(media_players[i]);
-        libvlc_event_attach(p_e,libvlc_MediaPlayerBuffering,(libvlc_callback_t)callbacks, (void *)idWin );
+        idWin = tmpWid->winId();
+        VideoBean *vb = new VideoBean();
+        vb->video = this;
+        vb->widWin = idWin;
+
+        p_e[i] = libvlc_media_player_event_manager(media_players[i]);
+        libvlc_event_attach(p_e[i],libvlc_MediaPlayerBuffering,(libvlc_callback_t)callbacks, (void *)vb );
+
         libvlc_media_player_set_xwindow(media_players[i], idWin);
-
         if(libvlc_media_player_play(media_players[i]) != 0)
             qDebug() << "libvlc_media_player_play error!!!";
+
 
 
     }
@@ -106,27 +90,63 @@ void VideoManuale::Play()
 }
 void VideoManuale::Stop()
 {
-     for(i = 0 ; i < num;i++){
-         libvlc_media_player_stop(media_players[i]);
-     }
+    QString tmpPr;
+    QLabel *tmpLabel;
+    for(i = 0 ; i < num;i++){
+
+        libvlc_media_player_stop(media_players[i]);
+        libvlc_media_player_release (media_players[i]);
+
+        tmpPr = QString("pr%1").arg(i);
+        tmpLabel = MainWindow::getInstance()->findChild<QLabel *>(tmpPr);
+        tmpLabel->setText("");
+
+
+    }
+    libvlc_release (inst);
 }
 void VideoManuale::callbacks(const libvlc_event_t *event, void *self){
 
 
-    int idWin = reinterpret_cast<intptr_t>(self);
+    //int idWin = reinterpret_cast<intptr_t>(self);
 
-    qDebug() << "Cache: " << event->u.media_player_buffering.new_cache;
+    qDebug() << "Tipo evento: " << event->type;
+
+    switch(event->type){
+
+        case libvlc_MediaPlayerBuffering:
+            VideoBean* pp = (VideoBean*)self;
+            qDebug() << "Cache: " << event->u.media_player_buffering.new_cache << pp->widWin;
+            int i_val = (int) event->u.media_player_buffering.new_cache;
+            emit pp->video->SignalBuffer(pp->widWin,i_val);
+            break;
+
+    }
+
+
+
+
+}
+void VideoManuale::SlotBuffer(int idWin, int val){
+
+    QString valText = QString("Buffer: %1%").arg(val);
+    QWidget *tmpWid = MainWindow::getInstance()->find(idWin);
+    QString tmpWidName = "pr"+tmpWid->objectName().replace("video","");
+
+    qDebug() << "Pr" << tmpWidName;
+
+    QLabel *tmpLabel = MainWindow::getInstance()->findChild<QLabel *>(tmpWidName);
+
+    tmpLabel->setText(valText);
     /*
-    float f_val = event->u.media_player_buffering.new_cache;
+    if(idWin==ui->video->winId()){
 
-    int i_val = (int) f_val;
-    int winid = idWin;
+        ui->pr->setText(valText);
 
-    if(winid==VideoManuale::getInstance()->ui->video->winId()){
-
-        VideoManuale::getInstance()->ui->pr->setValue(i_val-1);
     }else{
-        VideoManuale::getInstance()->ui->pr2->setValue(i_val-1);
+
+        ui->pr2->setText(valText);
+
     }
     */
 
