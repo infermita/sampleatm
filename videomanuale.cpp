@@ -94,16 +94,23 @@ void VideoManuale::Stop()
     QLabel *tmpLabel;
     for(i = 0 ; i < num;i++){
 
-        libvlc_media_player_stop(media_players[i]);
-        libvlc_media_player_release (media_players[i]);
+        if(libvlc_media_player_is_playing(media_players[i])){
 
-        tmpPr = QString("pr%1").arg(i);
-        tmpLabel = MainWindow::getInstance()->findChild<QLabel *>(tmpPr);
-        tmpLabel->setText("");
+            libvlc_media_player_stop(media_players[i]);
+            libvlc_media_player_release (media_players[i]);
+
+            tmpPr = QString("pr%1").arg(i);
+            tmpLabel = MainWindow::getInstance()->findChild<QLabel *>(tmpPr);
+            tmpLabel->setText("");
+        }
 
 
     }
-    libvlc_release (inst);
+    if(inst!=0){
+        libvlc_release (inst);
+        inst = 0;
+
+    }
 }
 void VideoManuale::callbacks(const libvlc_event_t *event, void *self){
 
