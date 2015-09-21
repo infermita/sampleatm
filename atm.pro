@@ -30,6 +30,10 @@ greaterThan(QT_MAJOR_VERSION, 4){
     PKGCONFIG += libvlc
 #}
 
+#QMAKE_CFLAGS += -std=c++11 -fpermissive
+#QMAKE_CXXFLAGS += -std=c++11 -fpermissive
+#QMAKE_LFLAGS += -std=c++11 -fpermissive
+
 TARGET = atm
 TEMPLATE = app
 
@@ -58,6 +62,7 @@ SOURCES +=\
     videomanuale.cpp \
     #lib/player.cpp
     #lib/player.cpp
+    lib/bean/videobean.cpp
 
 HEADERS  += mainwindow.h \
     firstpage.h \
@@ -79,6 +84,7 @@ HEADERS  += mainwindow.h \
     videomanuale.h \
     #lib/player.h
     #lib/player.h
+    lib/bean/videobean.h
 
 FORMS    += mainwindow.ui \
     firstpage.ui \
