@@ -1,5 +1,6 @@
 #include "dao.h"
 #include "mainwindow.h"
+#include "lib/constant.h"
 #include <QDir>
 #include <iostream>
 #include <typeinfo>
@@ -7,7 +8,7 @@
 
 Dao::Dao()
 {
-    QString path = "./db";
+    QString path = Constant::pathConf()+"db";
     //QString path = "/etc/atm/db";
     qDebug() << "apro db " << path;
     db = QSqlDatabase::addDatabase("QSQLITE");

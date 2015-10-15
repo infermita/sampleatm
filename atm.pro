@@ -61,7 +61,8 @@ SOURCES +=\
     #lib/player.cpp
     #lib/player.cpp
     lib/bean/videobean.cpp \
-    lib/constant.cpp
+    lib/constant.cpp \
+    lib/language.cpp
 
 HEADERS  += mainwindow.h \
     firstpage.h \
@@ -82,7 +83,8 @@ HEADERS  += mainwindow.h \
     #lib/player.h
     #lib/player.h
     lib/bean/videobean.h \
-    lib/constant.h
+    lib/constant.h \
+    lib/language.h
 
 FORMS    += mainwindow.ui \
     firstpage.ui \

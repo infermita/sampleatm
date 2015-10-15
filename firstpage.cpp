@@ -4,6 +4,7 @@
 #include "firstpage.h"
 #include "ui_firstpage.h"
 #include "mainwindow.h"
+#include "lib/language.h"
 
 FirstPage::FirstPage()
 {
@@ -31,8 +32,12 @@ void FirstPage::setWidget(QWidget *parent)
 {
     ui = new Ui::FirstPage;
     ui->setupUi(parent);
-    QObject::connect(ui->condotta, SIGNAL (clicked()),this, SLOT (Condotta()),Qt::DirectConnection);
-    QObject::connect(ui->manutenzione, SIGNAL (clicked()),this, SLOT (Manutenzione()),Qt::DirectConnection);
+
+    ui->conduct->setText(Language::Gettranslation("button","conduct"));
+    ui->maintenance->setText(Language::Gettranslation("button","maintenance"));
+
+    QObject::connect(ui->conduct, SIGNAL (clicked()),this, SLOT (Condotta()),Qt::DirectConnection);
+    QObject::connect(ui->maintenance, SIGNAL (clicked()),this, SLOT (Manutenzione()),Qt::DirectConnection);
 
 }
 

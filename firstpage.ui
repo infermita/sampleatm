@@ -24,7 +24,7 @@ QPushButton:pressed
   background-color : #cccccc;
 }</string>
   </property>
-  <widget class="QPushButton" name="condotta">
+  <widget class="QPushButton" name="conduct">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -46,10 +46,10 @@ QPushButton:pressed
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>Condotta</string>
+    <string>Conduct</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="manutenzione">
+  <widget class="QPushButton" name="maintenance">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -71,7 +71,7 @@ QPushButton:pressed
     <string notr="true"/>
    </property>
    <property name="text">
-    <string>Manutenzione</string>
+    <string>Maintenance</string>
    </property>
   </widget>
  </widget>

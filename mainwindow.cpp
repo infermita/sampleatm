@@ -12,6 +12,7 @@
 #include "videomanuale.h"
 #include "lib/dao.h"
 #include "lib/constant.h"
+#include "lib/language.h"
 #include <QTime>
 #include <QDateTime>
 #include <stdio.h>
@@ -37,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
     instance = this;
     ptr1 = 0;
 
-    setWidget(ObFirstPage(),abilitazione());
+    setWidget(ObFirstPage(),Language::Gettranslation("title","enable"));
 
     //QRect rec = QApplication::desktop()->screenGeometry();
     //qDebug() << "width: " << rec.width() << " height: " << rec.height();
@@ -52,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->matricola->setText(res.value("numero"));
 
     delete d;
+
 
 }
 
