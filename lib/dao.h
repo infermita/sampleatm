@@ -1,24 +1,20 @@
 #ifndef DAO_H
 #define DAO_H
 
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlQuery>
-#include <QtSql/QSqlRecord>
+#include <QtSql>
+#include <QTableView>
 #include <QVariant>
 
-
-#include "bean/beandaogen.h"
-#include "bean/beantram.h"
 
 class Dao
 {
 public:
     Dao();
-    QList<BeanDaoGen> listRow();
-    BeanDaoGen *singleRow(QString table);
+    QHash<QString, QString> singleRow(QString table,QString where);
     bool insertRow();
-    bool updateRow();
-    bool deleteRow();
+    bool updateRow(QString table,QStringList values,QString where);
+    bool deleteRow(QString table,QString where);
+    QList< QHash<QString, QString> > listRow(QString table);
 
 private:
     QSqlDatabase db;

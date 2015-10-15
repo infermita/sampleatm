@@ -49,6 +49,8 @@ private:
 protected:
     void timerEvent(QTimerEvent *event);
 
+
+
 };
 
 #endif // MAINWINDOW_H

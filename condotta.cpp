@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "lib/functions.h"
 #include "QDebug"
+#include <QSignalMapper>
 
 Condotta::Condotta()
 {
@@ -26,8 +27,18 @@ void Condotta::setWidget(QWidget *parent)
     connect(ui->meno, SIGNAL(clicked()), this, SLOT(LessBrightness()));
     connect(ui->slider, SIGNAL(valueChanged(int)),this, SLOT(SetBrightness(int)));
     connect(ui->strumenti, SIGNAL(clicked()), this, SLOT(GoToStrumenti()));
-    connect(ui->vaivideomanuale, SIGNAL(clicked()), this, SLOT(GoToManualVideo()));
+    connect(ui->vaivideosorveglianza, SIGNAL(clicked()), this, SLOT(GoToVideo()));
 
+    QSignalMapper *mapper = new QSignalMapper( this );
+
+    mapper->setMapping( ui->videomanuale, 0 );
+    mapper->setMapping( ui->videoautomatico, 1 );
+
+    connect(ui->videomanuale, SIGNAL(clicked()), mapper, SLOT(map()));
+    connect(ui->videoautomatico, SIGNAL(clicked()), mapper, SLOT(map()));
+    connect( mapper, SIGNAL(mapped(int)), this, SLOT(SetVideo(int)));
+
+    ui->videoautomatico->setDown(true);
 
     Functions *f = new Functions();
     //QString screen = f->Syscall("cat /sys/class/backlight/acpi_video0/brightness", "r");
@@ -82,8 +93,24 @@ void Condotta::GoToStrumenti()
 
 
 }
-void Condotta::GoToManualVideo(){
+void Condotta::GoToVideo(){
 
     MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObVideoManuale(),MainWindow::getInstance()->videomanuale());
+
+}
+void Condotta::SetVideo(int val){
+
+    if(val==0){
+
+        ui->videomanuale->setDown(true);
+        ui->videoautomatico->setDown(false);
+
+    }else{
+
+        ui->videomanuale->setDown(false);
+        ui->videoautomatico->setDown(true);
+
+
+    }
 
 }

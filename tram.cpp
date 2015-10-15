@@ -1,6 +1,8 @@
 #include "tram.h"
 #include "ui_tram.h"
 #include "mainwindow.h"
+#include "lib/constant.h"
+#include "lib/dao.h"
 #include <QSignalMapper>
 
 Tram::Tram()
@@ -68,7 +70,14 @@ void Tram::Reset(){
 }
 void Tram::Confirm(){
 
-    MainWindow::getInstance()->setTram(ui->tram->text());
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+    QStringList values;
+    values << "numero='"+ui->tram->text()+"'";
+    Dao *d = new Dao();
+
+    if(d->updateRow(Constant::tableTram(),values,"")){
+        MainWindow::getInstance()->setTram(ui->tram->text());
+        MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+    }
+    delete d;
 
 }

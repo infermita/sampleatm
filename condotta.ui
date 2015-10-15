@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget { background-color : #030066; color : #fefe00;border:2px solid #39bcde }
-QPushButton { background-color : #9afffe; color : #000000;border:2px solid #eaf5f2;font: 30pt &quot;DejaVu Sans&quot;;font: bold;  }
+QPushButton { background-color : #9afffe; color : #000000;border:4px solid #6b95ae;font: 30pt &quot;DejaVu Sans&quot;;font: bold;border-left-color:white;border-top-color:white  }
 QLabel { background-color : #6462fc; color : #FFFFFF;border:2px solid #FFFFFF;font-size:18px;font: 20pt &quot;DejaVu Sans&quot;;font: bold;  }
 QSlider { border:2px solid #eaf5f2;border-radius: 5px;}
 QSlider::handle{
@@ -24,6 +24,13 @@ background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f
  border-radius: 5px;
  width: 55px;
  height:55px;
+}
+QPushButton:pressed
+{
+  border:4px solid white;
+  border-left-color:#6b95ae;
+  border-top-color:#6b95ae;
+  background-color : #cccccc;
 }
 
 
@@ -572,7 +579,7 @@ background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f
      <string>Vai in Video Sorveglianza</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideomanuale">
+   <widget class="QPushButton" name="videomanuale">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -597,7 +604,7 @@ background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f
      <string>Manuale</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideoautomatica">
+   <widget class="QPushButton" name="videoautomatico">
     <property name="geometry">
      <rect>
       <x>313</x>

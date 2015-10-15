@@ -23,11 +23,11 @@ void Strumenti::setWidget(QWidget *parent)
 
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
 
-    SetGauge("tensioneLinea","V",0,1000,100);
-    SetGauge("correnteLinea","A",-500,500,125);
-    SetGauge("velocita","Km/h",0,100,12.5);
-    SetGauge("tensioneBatteria","V",0,40,4);
-    SetGauge("correnteBatteria","A",0,20,2.5);
+    //SetGauge("tensioneLinea","V",0,1000,100);
+    //SetGauge("correnteLinea","A",-500,500,125);
+    //SetGauge("velocita","Km/h",0,100,12.5);
+    //SetGauge("tensioneBatteria","V",0,40,4);
+    //SetGauge("correnteBatteria","A",0,20,2.5);
 
     timerId = startTimer(1000);
 
@@ -37,6 +37,7 @@ void Strumenti::Exit()
     MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObCondotta(),MainWindow::getInstance()->condotta());
 
 }
+/*
 void Strumenti::SetGauge(QString type,QString label,float min,float max,float step){
 
     QcGaugeWidget *mAirspeedGauge = new QcGaugeWidget;
@@ -115,8 +116,8 @@ void Strumenti::SetGauge(QString type,QString label,float min,float max,float st
     }
 
 }
-
-unsigned int Strumenti::myrand( unsigned int n, unsigned int m ){
+*/
+int Strumenti::myrand( unsigned int n, unsigned int m ){
 
     return qrand() % ((m + 1) - n) + n;
 
@@ -124,9 +125,14 @@ unsigned int Strumenti::myrand( unsigned int n, unsigned int m ){
 
 void Strumenti::timerEvent(QTimerEvent *event)
 {
-    tensioneLineaAgo->setCurrentValue(myrand(500,550));
-    correnteLineaAgo->setCurrentValue(myrand(00,10));
-    velocitaAgo->setCurrentValue(myrand(20,30));
-    tensioneBatteriaAgo->setCurrentValue(myrand(16,24));
-    correnteBatteriaAgo->setCurrentValue(myrand(10,15));
+    ui->tensione_linea->display(myrand(500,550));
+    ui->corrente_linea->display(myrand(00,10));
+    ui->velocita->display(myrand(20,30));
+    ui->tensione_batteria->display(myrand(16,24));
+    ui->corrente_batteria->display(myrand(10,15));
+    //tensioneLineaAgo->setCurrentValue(myrand(500,550));
+    //correnteLineaAgo->setCurrentValue(myrand(00,10));
+    //velocitaAgo->setCurrentValue(myrand(20,30));
+    //tensioneBatteriaAgo->setCurrentValue(myrand(16,24));
+    //correnteBatteriaAgo->setCurrentValue(myrand(10,15));
 }

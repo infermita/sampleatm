@@ -27,7 +27,8 @@ private slots:
     void LessBrightness();
     void SetBrightness(int val);
     void GoToStrumenti();
-    void GoToManualVideo();
+    void GoToVideo();
+    void SetVideo(int val);
 };
 Q_DECLARE_METATYPE(Condotta)
 #endif // CONDOTTA_H

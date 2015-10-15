@@ -26,7 +26,7 @@ private:
     Ui::Strumenti *ui;
     QcNeedleItem *tensioneLineaAgo, *correnteLineaAgo, *velocitaAgo, *tensioneBatteriaAgo,*correnteBatteriaAgo;
     void SetGauge(QString type,QString label,float min,float max,float step);
-    unsigned int myrand( unsigned int n, unsigned int m );
+    int myrand( unsigned int n, unsigned int m );
     int timerId;
 private slots:
     void Exit();

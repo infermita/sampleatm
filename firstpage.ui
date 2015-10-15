@@ -15,7 +15,14 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget { background-color : #030066; color : #fefe00;border:2px solid #39bcde }
-QPushButton { background-color : #9afffe; color : #000000;border:2px solid #eaf5f2;font: 40pt &quot;DejaVu Sans&quot;;font: bold;  }</string>
+QPushButton { background-color : #9afffe; color : #000000;border:4px solid #6b95ae;font: 30pt &quot;DejaVu Sans&quot;;font: bold;border-left-color:white;border-top-color:white  }
+QPushButton:pressed
+{
+  border:4px solid white;
+  border-left-color:#6b95ae;
+  border-top-color:#6b95ae;
+  background-color : #cccccc;
+}</string>
   </property>
   <widget class="QPushButton" name="condotta">
    <property name="geometry">
@@ -29,7 +36,7 @@ QPushButton { background-color : #9afffe; color : #000000;border:2px solid #eaf5
    <property name="font">
     <font>
      <family>DejaVu Sans</family>
-     <pointsize>40</pointsize>
+     <pointsize>30</pointsize>
      <weight>75</weight>
      <italic>false</italic>
      <bold>true</bold>
@@ -54,7 +61,7 @@ QPushButton { background-color : #9afffe; color : #000000;border:2px solid #eaf5
    <property name="font">
     <font>
      <family>DejaVu Sans</family>
-     <pointsize>40</pointsize>
+     <pointsize>30</pointsize>
      <weight>75</weight>
      <italic>false</italic>
      <bold>true</bold>

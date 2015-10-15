@@ -11,7 +11,7 @@
 #include "data.h"
 #include "videomanuale.h"
 #include "lib/dao.h"
-#include "lib/bean/beantram.h"
+#include "lib/constant.h"
 #include <QTime>
 #include <QDateTime>
 #include <stdio.h>
@@ -44,16 +44,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //setWidget(ObStrumenti,strumenti);
 
-    /*
+
     Dao *d = new Dao();
 
-    BeanDaoGen *bg;
-    bg = d->singleRow("tram");
-    BeanTram *bt = static_cast<BeanTram*>(bg);
-    //if(bt!=0)
-        ui->matricola->setText(bt->numeroTram);
-    */
+    QHash<QString,QString> res = d->singleRow(Constant::tableTram(),"");
 
+    ui->matricola->setText(res.value("numero"));
+
+    delete d;
 
 }
 
@@ -116,4 +114,7 @@ void MainWindow::setTram(QString tram){
     ui->matricola->setText(tram);
 
 }
+
+
+
 

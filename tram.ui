@@ -16,7 +16,14 @@
   <property name="styleSheet">
    <string notr="true">QWidget { background-color : #030066; color : #fefe00;border:2px solid #39bcde;font: 26pt &quot;DejaVu Sans&quot;;font: bold;  }
 QFrame {border:2px solid #FFFFFF }
-QPushButton { font: 28pt &quot;DejaVu Sans&quot;;font: bold;  }
+QPushButton { background-color : #9afffe; color : #000000;border:4px solid #6b95ae;font: 30pt &quot;DejaVu Sans&quot;;font: bold;border-left-color:white;border-top-color:white  }
+QPushButton:pressed
+{
+  border:4px solid white;
+  border-left-color:#6b95ae;
+  border-top-color:#6b95ae;
+  background-color : #cccccc;
+}
 QLabel {border:none }</string>
   </property>
   <widget class="QFrame" name="frame_4">
@@ -98,7 +105,7 @@ QLabel {border:none }</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {color : #fefe00; }</string>
+    <string notr="true"/>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -109,16 +116,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="uno">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>20</y>
-      <width>120</width>
-      <height>120</height>
+      <x>240</x>
+      <y>10</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -131,16 +138,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="due">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>20</y>
-      <width>120</width>
-      <height>120</height>
+      <x>380</x>
+      <y>10</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -154,15 +161,15 @@ QLabel {border:none }</string>
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>20</y>
-      <width>120</width>
-      <height>120</height>
+      <y>10</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -175,16 +182,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="quattro">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>240</x>
       <y>150</y>
-      <width>120</width>
-      <height>120</height>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -197,16 +204,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="cinque">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>380</x>
       <y>150</y>
-      <width>120</width>
-      <height>120</height>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -221,14 +228,14 @@ QLabel {border:none }</string>
      <rect>
       <x>520</x>
       <y>150</y>
-      <width>120</width>
-      <height>120</height>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -241,16 +248,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="sette">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>280</y>
-      <width>120</width>
-      <height>120</height>
+      <x>240</x>
+      <y>290</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -263,16 +270,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="otto">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>280</y>
-      <width>120</width>
-      <height>120</height>
+      <x>380</x>
+      <y>290</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -286,15 +293,15 @@ QLabel {border:none }</string>
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>280</y>
-      <width>120</width>
-      <height>120</height>
+      <y>290</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -307,16 +314,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="cancel">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>20</y>
-      <width>120</width>
-      <height>120</height>
+      <x>660</x>
+      <y>10</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -329,16 +336,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="zero">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>660</x>
       <y>150</y>
-      <width>120</width>
-      <height>120</height>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -351,16 +358,16 @@ QLabel {border:none }</string>
    <widget class="QPushButton" name="ok">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>280</y>
-      <width>120</width>
-      <height>120</height>
+      <x>660</x>
+      <y>290</y>
+      <width>130</width>
+      <height>130</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
@@ -381,7 +388,7 @@ QLabel {border:none }</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QFrame {border:2px solid #FFFFFF }</string>
+    <string notr="true"/>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -401,14 +408,14 @@ QLabel {border:none }</string>
     <property name="font">
      <font>
       <family>DejaVu Sans</family>
-      <pointsize>28</pointsize>
+      <pointsize>30</pointsize>
       <weight>75</weight>
       <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton { background-color : #9afffe; color : #000000;border:2px solid #eaf5f2;font: 28pt &quot;DejaVu Sans&quot;;font: bold;  }</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>EXIT</string>

@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     setenv("TSLIB_TSDEVICE","'/dev/input/event0'",1);
 
     QApplication a(argc, argv);
+
     MainWindow w;
     w.show();
 

@@ -56,13 +56,12 @@ SOURCES +=\
     data.cpp \
     analogclock.cpp \
     lib/dao.cpp \
-    lib/bean/beandaogen.cpp \
-    lib/bean/beantram.cpp \
     lib/messagewindow.cpp \
     videomanuale.cpp \
     #lib/player.cpp
     #lib/player.cpp
-    lib/bean/videobean.cpp
+    lib/bean/videobean.cpp \
+    lib/constant.cpp
 
 HEADERS  += mainwindow.h \
     firstpage.h \
@@ -78,13 +77,12 @@ HEADERS  += mainwindow.h \
     data.h \
     analogclock.h \
     lib/dao.h \
-    lib/bean/beandaogen.h \
-    lib/bean/beantram.h \
     lib/messagewindow.h \
     videomanuale.h \
     #lib/player.h
     #lib/player.h
-    lib/bean/videobean.h
+    lib/bean/videobean.h \
+    lib/constant.h
 
 FORMS    += mainwindow.ui \
     firstpage.ui \

@@ -7,6 +7,7 @@ public:
     VideoBean();
     VideoManuale *video;
     int widWin;
+    int idPlay;
 };
 
 #endif // VIDEOBEAN_H
