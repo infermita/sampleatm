@@ -1,11 +1,11 @@
 #ifndef VIDEOBEAN_H
 #define VIDEOBEAN_H
-#include "videomanuale.h"
+#include "manualvideo.h"
 class VideoBean
 {
 public:
     VideoBean();
-    VideoManuale *video;
+    ManualVideo *video;
     int widWin;
     int idPlay;
 };

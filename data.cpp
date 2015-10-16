@@ -2,6 +2,7 @@
 #include "ui_data.h"
 #include "mainwindow.h"
 #include "lib/functions.h"
+#include "lib/constant.h"
 #include <QDateTime>
 
 Data::Data()
@@ -47,7 +48,7 @@ void Data::setWidget(QWidget *parent)
 }
 void Data::Exit()
 {
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+    MainWindow::getInstance()->setWidget(Constant::ObSettings());
 
 }
 void Data::SaveData()
@@ -59,8 +60,7 @@ void Data::SaveData()
     Functions *f = new Functions();
     f->Syscall(myCmd, "w");
     delete f;
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
-
+    Exit();
 }
 
 void Data::SetSpinBox(QSpinBox *c, int min,int max, QString dFormat){

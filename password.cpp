@@ -2,6 +2,7 @@
 #include "password.h"
 #include "ui_password.h"
 #include "lib/messagewindow.h"
+#include "lib/constant.h"
 #include <QSignalMapper>
 #include <QMessageBox>
 
@@ -57,7 +58,7 @@ void Password::setWidget(QWidget *parent)
 }
 void Password::Exit()
 {
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObFirstPage(),MainWindow::getInstance()->abilitazione());
+    MainWindow::getInstance()->setWidget(Constant::ObFirstPage());
 
 }
 void Password::SelNumB( const QString &b)
@@ -72,7 +73,7 @@ void Password::Confirm(){
 
     if(QString::compare(secret(),ui->password->text())==0){
 
-        MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+        MainWindow::getInstance()->setWidget(Constant::ObSettings());
 
     }else{
 

@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "lib/constant.h"
 #include "lib/dao.h"
+#include "lib/constant.h"
 #include <QSignalMapper>
 
 Tram::Tram()
@@ -57,7 +58,7 @@ void Tram::setWidget(QWidget *parent)
 }
 void Tram::Exit()
 {
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+    MainWindow::getInstance()->setWidget(Constant::ObSettings());
 
 }
 void Tram::SelNumB( const QString &b)
@@ -74,9 +75,9 @@ void Tram::Confirm(){
     values << "numero='"+ui->tram->text()+"'";
     Dao *d = new Dao();
 
-    if(d->updateRow(Constant::tableTram(),values,"")){
+    if(d->updateRow(Constant::TableTram(),values,"")){
         MainWindow::getInstance()->setTram(ui->tram->text());
-        MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObImpostazioni(),MainWindow::getInstance()->impostazioni());
+        Exit();
     }
     delete d;
 

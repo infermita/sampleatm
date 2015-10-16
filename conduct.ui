@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Condotta</class>
- <widget class="QWidget" name="Condotta">
+ <class>Conduct</class>
+ <widget class="QWidget" name="Conduct">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -873,7 +873,7 @@ QPushButton:pressed
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="meno">
+   <widget class="QPushButton" name="less">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -898,7 +898,7 @@ QPushButton:pressed
      <string>-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="piu">
+   <widget class="QPushButton" name="more">
     <property name="geometry">
      <rect>
       <x>313</x>

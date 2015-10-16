@@ -2,14 +2,14 @@
 #include "ui_mainwindow.h"
 #include "dynamicwidget.h"
 #include "firstpage.h"
-#include "condotta.h"
+#include "conduct.h"
 #include "password.h"
-#include "strumenti.h"
+#include "instruments.h"
 #include "stati.h"
-#include "impostazioni.h"
+#include "settings.h"
 #include "tram.h"
 #include "data.h"
-#include "videomanuale.h"
+#include "manualvideo.h"
 #include "lib/dao.h"
 #include "lib/constant.h"
 #include "lib/language.h"
@@ -19,6 +19,8 @@
 #include <QObject>
 #include <QDebug>
 #include <QRect>
+#include <libintl.h>
+#include <locale.h>
 
 MainWindow* MainWindow::instance = 0;
 
@@ -38,21 +40,16 @@ MainWindow::MainWindow(QWidget *parent) :
     instance = this;
     ptr1 = 0;
 
-    setWidget(ObFirstPage(),Language::Gettranslation("title","enable"));
-
-    //QRect rec = QApplication::desktop()->screenGeometry();
-    //qDebug() << "width: " << rec.width() << " height: " << rec.height();
-
-    //setWidget(ObStrumenti,strumenti);
-
+    setWidget(Constant::ObFirstPage());
 
     Dao *d = new Dao();
 
-    QHash<QString,QString> res = d->singleRow(Constant::tableTram(),"");
+    QHash<QString,QString> res = d->singleRow(Constant::TableTram(),"");
 
-    ui->matricola->setText(res.value("numero"));
+    ui->serialbus->setText(res.value("numero"));
 
     delete d;
+
 
 
 }
@@ -70,18 +67,19 @@ void MainWindow::timerEvent(QTimerEvent *event)
     ui->mydata->setText(dateTimeString);
 
 }
-void MainWindow::setWidget(QString widgetName,QString contesto)
+void MainWindow::setWidget(QString widgetName)
 {
 
+
     qRegisterMetaType<FirstPage>("FirstPage");
-    qRegisterMetaType<Condotta>("Condotta");
+    qRegisterMetaType<Conduct>("Conduct");
     qRegisterMetaType<Password>("Password");
-    qRegisterMetaType<Strumenti>("Strumenti");
+    qRegisterMetaType<Instruments>("Instruments");
     qRegisterMetaType<Stati>("Stati");
-    qRegisterMetaType<Impostazioni>("Impostazioni");
+    qRegisterMetaType<Settings>("Settings");
     qRegisterMetaType<Tram>("Tram");
     qRegisterMetaType<Data>("Data");
-    qRegisterMetaType<VideoManuale>("VideoManuale");
+    qRegisterMetaType<ManualVideo>("ManualVideo");
 
 
     if(ptr1!=0){
@@ -104,7 +102,17 @@ void MainWindow::setWidget(QString widgetName,QString contesto)
     ptr1 = (DynamicWidget*)(QMetaType::construct(idWidget));
     ptr1->setWidget(ui->boxcentrale);
     ui->boxcentrale->show();
-    ui->contesto->setText(contesto);
+    /*
+    ui->context->setText(QString::fromUtf8(
+                             Language::Gettranslation(
+                                ptr1->metaObject()->className(),
+                                ui->context->metaObject()->className(),
+                                ui->context->objectName()
+                             ).toUpper().toStdString().c_str()
+                          )
+                         );
+    */
+    ui->context->tr(widgetName.toStdString().c_str());
 
 
     //QMetaType::destroy(id, ptr1);
@@ -113,7 +121,7 @@ void MainWindow::setWidget(QString widgetName,QString contesto)
 }
 void MainWindow::setTram(QString tram){
 
-    ui->matricola->setText(tram);
+    ui->serialbus->setText(tram);
 
 }
 

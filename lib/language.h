@@ -7,7 +7,7 @@ class Language
 {
 public:
     Language();
-    static QString Gettranslation(QString type,QString key);
+    static QString Gettranslation(QString widgetName,QString widgetType,QString key);
 private:
 
 };

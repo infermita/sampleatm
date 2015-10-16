@@ -1,24 +1,25 @@
-#include "strumenti.h"
-#include "ui_strumenti.h"
+#include "instruments.h"
+#include "ui_instruments.h"
 #include "mainwindow.h"
+#include "lib/constant.h"
 
-Strumenti::Strumenti()
+Instruments::Instruments()
 {
 
 }
 
-Strumenti::~Strumenti()
+Instruments::~Instruments()
 {
     killTimer(timerId);
     delete ui;
 }
 
-Strumenti::Strumenti(const Strumenti &t){
+Instruments::Instruments(const Instruments &t){
 
 }
-void Strumenti::setWidget(QWidget *parent)
+void Instruments::setWidget(QWidget *parent)
 {
-    ui = new Ui::Strumenti;
+    ui = new Ui::Instruments;
     ui->setupUi(parent);
 
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
@@ -32,9 +33,9 @@ void Strumenti::setWidget(QWidget *parent)
     timerId = startTimer(1000);
 
 }
-void Strumenti::Exit()
+void Instruments::Exit()
 {
-    MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObCondotta(),MainWindow::getInstance()->condotta());
+    MainWindow::getInstance()->setWidget(Constant::ObConduct());
 
 }
 /*
@@ -117,13 +118,13 @@ void Strumenti::SetGauge(QString type,QString label,float min,float max,float st
 
 }
 */
-int Strumenti::myrand( unsigned int n, unsigned int m ){
+int Instruments::myrand( unsigned int n, unsigned int m ){
 
     return qrand() % ((m + 1) - n) + n;
 
 }
 
-void Strumenti::timerEvent(QTimerEvent *event)
+void Instruments::timerEvent(QTimerEvent *event)
 {
     ui->tensione_linea->display(myrand(500,550));
     ui->corrente_linea->display(myrand(00,10));

@@ -1,5 +1,5 @@
-#include "videomanuale.h"
-#include "ui_videomanuale.h"
+#include "manualvideo.h"
+#include "ui_manualvideo.h"
 #include "mainwindow.h"
 #include "lib/bean/videobean.h"
 #include "lib/dao.h"
@@ -12,21 +12,21 @@
 #include <string.h>
 #include <stdint.h>
 
-VideoManuale::VideoManuale()
+ManualVideo::ManualVideo()
 {
 
 }
-VideoManuale::~VideoManuale()
+ManualVideo::~ManualVideo()
 {
     delete ui;
 }
-VideoManuale::VideoManuale(const VideoManuale &t){
+ManualVideo::ManualVideo(const ManualVideo &t){
 
 }
 
-void VideoManuale::setWidget(QWidget *parent)
+void ManualVideo::setWidget(QWidget *parent)
 {
-    ui = new Ui::VideoManuale;
+    ui = new Ui::ManualVideo;
     ui->setupUi(parent);
 
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
@@ -40,13 +40,13 @@ void VideoManuale::setWidget(QWidget *parent)
 
 }
 
-void VideoManuale::CreateButton(){
+void ManualVideo::CreateButton(){
 
     QString tmpButName;
     QSignalMapper *mapper = new QSignalMapper( this );
 
     Dao *d = new Dao();
-    listCam = d->listRow(Constant::tableCamera());
+    listCam = d->listRow(Constant::TableCamera());
 
     QPushButton *button;
 
@@ -90,7 +90,7 @@ void VideoManuale::CreateButton(){
 
 }
 
-void VideoManuale::Exit()
+void ManualVideo::Exit()
 {
     if(inst){
         Stop();
@@ -110,11 +110,11 @@ void VideoManuale::Exit()
         CreateButton();
     }else{
 
-        MainWindow::getInstance()->setWidget(MainWindow::getInstance()->ObCondotta(),MainWindow::getInstance()->condotta());
+        MainWindow::getInstance()->setWidget(Constant::ObConduct());
     }
 
 }
-void VideoManuale::Play(QString id){
+void ManualVideo::Play(QString id){
 
     libvlc_media_t *m_media;
     QString url;
@@ -271,7 +271,7 @@ void VideoManuale::Play(QString id){
 
 }
 
-void VideoManuale::Stop()
+void ManualVideo::Stop()
 {
     QString tmpPr;
     //QLabel *tmpLabel;
@@ -304,7 +304,7 @@ void VideoManuale::Stop()
 
     }
 }
-void VideoManuale::callbacks(const libvlc_event_t *event, void *self){
+void ManualVideo::callbacks(const libvlc_event_t *event, void *self){
 
 
     //int idWin = reinterpret_cast<intptr_t>(self);
@@ -333,7 +333,7 @@ void VideoManuale::callbacks(const libvlc_event_t *event, void *self){
 
 
 }
-void VideoManuale::SlotBuffer(int idWin, int val){
+void ManualVideo::SlotBuffer(int idWin, int val){
 
     QString valText = QString("Buffer: %1%").arg(val);
     QWidget *tmpWid = MainWindow::getInstance()->find(idWin);
@@ -358,7 +358,7 @@ void VideoManuale::SlotBuffer(int idWin, int val){
 
 }
 
-void VideoManuale::timerEvent(QTimerEvent *event)
+void ManualVideo::timerEvent(QTimerEvent *event)
 {
     //QDateTime dateTime = QDateTime::currentDateTime();
     //QString dateTimeString = dateTime.toString("dd-MM-yy\nhh:mm:ss");
@@ -368,13 +368,13 @@ void VideoManuale::timerEvent(QTimerEvent *event)
     //libvlc_video_set_marquee_string(media_players[0], libvlc_marquee_Text, dateTimeString.toUtf8().data());
     libvlc_media_player_play(media_players[0]);
 }
-void VideoManuale::mousePressEvent(QMouseEvent *qevent)
+void ManualVideo::mousePressEvent(QMouseEvent *qevent)
 {
 
     qDebug() << "qua";
 
 }
-void VideoManuale::mouseReleaseEvent(QMouseEvent *){
+void ManualVideo::mouseReleaseEvent(QMouseEvent *){
 
     qDebug() << "qua 2";
 

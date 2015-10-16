@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>VideoManuale</class>
- <widget class="QWidget" name="VideoManuale">
+ <class>ManualVideo</class>
+ <widget class="QWidget" name="ManualVideo">
   <property name="geometry">
    <rect>
     <x>0</x>

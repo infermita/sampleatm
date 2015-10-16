@@ -8,7 +8,7 @@
 
 Dao::Dao()
 {
-    QString path = Constant::pathConf()+"db";
+    QString path = Constant::PathConf()+Constant::DbName();
     //QString path = "/etc/atm/db";
     qDebug() << "apro db " << path;
     db = QSqlDatabase::addDatabase("QSQLITE");

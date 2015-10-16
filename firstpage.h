@@ -19,7 +19,7 @@ public:
     FirstPage(const FirstPage &t);
 
 private slots:
-        void Condotta();
+        void Conduct();
         void Manutenzione();
 
 private:

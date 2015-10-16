@@ -1,5 +1,5 @@
-#ifndef VIDEOMANUALE_H
-#define VIDEOMANUALE_H
+#ifndef MANUALVIDEO_H
+#define MANUALVIDEO_H
 
 #include <QMetaType>
 //#include <gst/gst.h>
@@ -9,19 +9,19 @@
 #include <vlc/vlc.h>
 #include <QPushButton>
 namespace Ui {
-class VideoManuale;
+class ManualVideo;
 }
 
-class VideoManuale : public DynamicWidget
+class ManualVideo : public DynamicWidget
 {
     Q_OBJECT
 
 public:
     //explicit FirstPage(QWidget *parent = 0);
-    VideoManuale();
-    ~VideoManuale();
+    ManualVideo();
+    ~ManualVideo();
     void setWidget(QWidget *parent);
-    VideoManuale(const VideoManuale &t);
+    ManualVideo(const ManualVideo &t);
 
 
 private slots:
@@ -32,7 +32,7 @@ private slots:
 
 
 private:
-    Ui::VideoManuale *ui;
+    Ui::ManualVideo *ui;
     QToolButton *m_playButton;
     int num;
     int i;
@@ -57,6 +57,6 @@ protected:
 
 
 };
-Q_DECLARE_METATYPE(VideoManuale)
+Q_DECLARE_METATYPE(ManualVideo)
 
 #endif // VIDEOMANUALE_H

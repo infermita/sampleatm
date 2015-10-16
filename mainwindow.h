@@ -15,18 +15,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     static MainWindow* getInstance();
-    void setWidget(QString widgetName,QString contesto);
+    void setWidget(QString widgetName);
     void setTram(QString tram);
     Ui::MainWindow *ui;
-
-    QString ObFirstPage()   { return "FirstPage";}
-    QString ObCondotta()    { return  "Condotta";}
-    QString ObPassword()    { return  "Password";}
-    QString ObStrumenti()   { return  "Strumenti";}
-    QString ObImpostazioni(){ return   "Impostazioni";}
-    QString ObTram()        { return  "Tram";}
-    QString ObData()        { return  "Data";}
-    QString ObVideoManuale()        { return  "VideoManuale";}
 
     QString abilitazione()  { return  "ABILITAZIONE";}
     QString condotta()      { return  "MENU' CONDOTTA";}

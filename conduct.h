@@ -1,26 +1,26 @@
-#ifndef CONDOTTA_H
-#define CONDOTTA_H
+#ifndef CONDUCT_H
+#define CONDUCT_H
 
 #include <QMetaType>
 #include "dynamicwidget.h"
 
 
 namespace Ui {
-class Condotta;
+class Conduct;
 }
 
-class Condotta : public DynamicWidget
+class Conduct : public DynamicWidget
 {
     Q_OBJECT
     
 public:
-    Condotta();
-    ~Condotta();
+    Conduct();
+    ~Conduct();
     void setWidget(QWidget *parent);
-    Condotta(const Condotta &t);
+    Conduct(const Conduct &t);
     
 private:
-    Ui::Condotta *ui;
+    Ui::Conduct *ui;
 private slots:
     void Exit();
     void MoreBrightness();
@@ -30,5 +30,5 @@ private slots:
     void GoToVideo();
     void SetVideo(int val);
 };
-Q_DECLARE_METATYPE(Condotta)
+Q_DECLARE_METATYPE(Conduct)
 #endif // CONDOTTA_H

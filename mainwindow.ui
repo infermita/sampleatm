@@ -235,7 +235,7 @@ QMessageBox {
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="matricola">
+   <widget class="QLabel" name="serialbus">
     <property name="geometry">
      <rect>
       <x>1030</x>
@@ -257,13 +257,13 @@ QMessageBox {
      <number>0</number>
     </property>
     <property name="text">
-     <string>matricola</string>
+     <string>serialbus</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="contesto">
+   <widget class="QLabel" name="context">
     <property name="geometry">
      <rect>
       <x>260</x>
@@ -285,7 +285,7 @@ QMessageBox {
      <number>0</number>
     </property>
     <property name="text">
-     <string>contesto</string>
+     <string>context</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

@@ -1,29 +1,29 @@
-#ifndef STRUMENTI_H
-#define STRUMENTI_H
+#ifndef INSTRUMENTS_H
+#define INSTRUMENTS_H
 
 #include <QWidget>
 #include "dynamicwidget.h"
 #include "lib/qcgaugewidget.h"
 
 namespace Ui {
-class Strumenti;
+class Instruments;
 }
 
-class Strumenti : public DynamicWidget
+class Instruments : public DynamicWidget
 {
     Q_OBJECT
     
 public:
-    Strumenti();
-    ~Strumenti();
+    Instruments();
+    ~Instruments();
     void setWidget(QWidget *parent);
-    Strumenti(const Strumenti &t);
+    Instruments(const Instruments &t);
 
 protected:
     void timerEvent(QTimerEvent *event);
 
 private:
-    Ui::Strumenti *ui;
+    Ui::Instruments *ui;
     QcNeedleItem *tensioneLineaAgo, *correnteLineaAgo, *velocitaAgo, *tensioneBatteriaAgo,*correnteBatteriaAgo;
     void SetGauge(QString type,QString label,float min,float max,float step);
     int myrand( unsigned int n, unsigned int m );
@@ -31,5 +31,5 @@ private:
 private slots:
     void Exit();
 };
-Q_DECLARE_METATYPE(Strumenti)
+Q_DECLARE_METATYPE(Instruments)
 #endif // STRUMENTI_H
