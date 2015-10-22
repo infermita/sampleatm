@@ -21,7 +21,7 @@ public:
     
 private:
     Ui::Password *ui;
-    QString secret() {return "12345";}
+
 private slots:
     void Exit();
     void SelNumB(const QString &b);

@@ -28,6 +28,9 @@ public:
     //Section tables name
     static QString TableCamera()        { return "camera";}
     static QString TableTram()          { return "tram";}
+
+    //Pasword maintenance
+    static QString Password()           { return "12345"; }
 };
 
 #endif // CONSTANT_H

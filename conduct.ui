@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">QWidget { background-color : #030066; color : #fefe00;border:2px solid #39bcde }
 QPushButton { background-color : #9afffe; color : #000000;border:4px solid #6b95ae;font: 30pt &quot;DejaVu Sans&quot;;font: bold;border-left-color:white;border-top-color:white  }
-QLabel { background-color : #6462fc; color : #FFFFFF;border:2px solid #FFFFFF;font-size:18px;font: 20pt &quot;DejaVu Sans&quot;;font: bold;  }
+QLabel { background-color : #6462fc; color : #FFFFFF;border:2px solid #FFFFFF;font-size:18px;font: 20pt &quot;DejaVu Sans&quot;;font: bold;text-transform: uppercase;  }
 QSlider { border:2px solid #eaf5f2;border-radius: 5px;}
 QSlider::handle{
 background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
@@ -54,7 +54,7 @@ QPushButton:pressed
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="mydata">
+   <widget class="QLabel" name="label_rolling_material">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -248,7 +248,7 @@ QPushButton:pressed
      <number>0</number>
     </property>
     <property name="text">
-     <string>STATO ROTABILE</string>
+     <string>condition rolling material</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -257,7 +257,7 @@ QPushButton:pressed
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="impinati">
+   <widget class="QPushButton" name="systems">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -279,10 +279,10 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Impianti</string>
+     <string>Systems</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="stati">
+   <widget class="QPushButton" name="states">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -304,10 +304,10 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Stati</string>
+     <string>States</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="strumenti">
+   <widget class="QPushButton" name="instruments">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -329,7 +329,7 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Strumenti</string>
+     <string>Instruments</string>
     </property>
    </widget>
   </widget>
@@ -351,7 +351,7 @@ QPushButton:pressed
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="mydata_2">
+   <widget class="QLabel" name="label_video_surveillance">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -545,7 +545,7 @@ QPushButton:pressed
      <number>0</number>
     </property>
     <property name="text">
-     <string>CONTROLLO VIDEO SORVEGLIANZA</string>
+     <string>Video Surveillance Control</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -554,7 +554,7 @@ QPushButton:pressed
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideosorveglianza">
+   <widget class="QPushButton" name="go_to_video_survillance">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -576,10 +576,10 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Vai in Video Sorveglianza</string>
+     <string>Go to video survillance</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="videomanuale">
+   <widget class="QPushButton" name="video_manual">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -601,10 +601,10 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Manuale</string>
+     <string>Manual</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="videoautomatico">
+   <widget class="QPushButton" name="video_automatic">
     <property name="geometry">
      <rect>
       <x>313</x>
@@ -626,7 +626,7 @@ QPushButton:pressed
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Automatica</string>
+     <string>Automatic</string>
     </property>
    </widget>
   </widget>
@@ -648,7 +648,7 @@ QPushButton:pressed
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="mydata_3">
+   <widget class="QLabel" name="label_brightness_control">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -842,7 +842,7 @@ QPushButton:pressed
      <number>0</number>
     </property>
     <property name="text">
-     <string>REGOLAZIONE LUMINOSITA</string>
+     <string>Brightness Control</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>

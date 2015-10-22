@@ -126,11 +126,11 @@ int Instruments::myrand( unsigned int n, unsigned int m ){
 
 void Instruments::timerEvent(QTimerEvent *event)
 {
-    ui->tensione_linea->display(myrand(500,550));
-    ui->corrente_linea->display(myrand(00,10));
-    ui->velocita->display(myrand(20,30));
-    ui->tensione_batteria->display(myrand(16,24));
-    ui->corrente_batteria->display(myrand(10,15));
+    ui->line_voltage->display(myrand(500,550));
+    ui->line_power->display(myrand(00,10));
+    ui->speed->display(myrand(20,30));
+    ui->battery_voltage->display(myrand(16,24));
+    ui->battery_power->display(myrand(10,15));
     //tensioneLineaAgo->setCurrentValue(myrand(500,550));
     //correnteLineaAgo->setCurrentValue(myrand(00,10));
     //velocitaAgo->setCurrentValue(myrand(20,30));

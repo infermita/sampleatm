@@ -27,32 +27,34 @@ void Password::setWidget(QWidget *parent)
     QSignalMapper *mapper = new QSignalMapper( this );
 
     mapper->setMapping( ui->zero, "0" );
-    mapper->setMapping( ui->uno, "1" );
-    mapper->setMapping( ui->due, "2" );
-    mapper->setMapping( ui->tre, "3" );
-    mapper->setMapping( ui->quattro, "4" );
-    mapper->setMapping( ui->cinque, "5" );
-    mapper->setMapping( ui->sei, "6" );
-    mapper->setMapping( ui->sette, "7" );
-    mapper->setMapping( ui->otto, "8" );
-    mapper->setMapping( ui->nove, "9" );
+    mapper->setMapping( ui->one, "1" );
+    mapper->setMapping( ui->two, "2" );
+    mapper->setMapping( ui->three, "3" );
+    mapper->setMapping( ui->four, "4" );
+    mapper->setMapping( ui->five, "5" );
+    mapper->setMapping( ui->six, "6" );
+    mapper->setMapping( ui->seven, "7" );
+    mapper->setMapping( ui->eight, "8" );
+    mapper->setMapping( ui->nine, "9" );
 
     QObject::connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
-    QObject::connect(ui->uno, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->due, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->tre, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->quattro, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->cinque, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->sei, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->sette, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->otto, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
-    QObject::connect(ui->nove, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->one, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->two, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->three, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->four, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->five, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->six, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->seven, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->eight, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
+    QObject::connect(ui->nine, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
     QObject::connect(ui->zero, SIGNAL (clicked()),mapper, SLOT (map()),Qt::DirectConnection);
 
     connect( mapper, SIGNAL(mapped(QString)), this, SLOT(SelNumB(QString)));
 
     QObject::connect(ui->ok, SIGNAL (clicked()),this, SLOT (Confirm()),Qt::DirectConnection);
-    QObject::connect(ui->cancel, SIGNAL (clicked()),this, SLOT (Reset()),Qt::DirectConnection);
+    QObject::connect(ui->del, SIGNAL (clicked()),this, SLOT (Reset()),Qt::DirectConnection);
+
+    ui->password->setEchoMode(QLineEdit::Password);
     //ui->uno->connect()
 
 }
@@ -71,7 +73,7 @@ void Password::Reset(){
 }
 void Password::Confirm(){
 
-    if(QString::compare(secret(),ui->password->text())==0){
+    if(QString::compare(Constant::Password(),ui->password->text())==0){
 
         MainWindow::getInstance()->setWidget(Constant::ObSettings());
 
@@ -86,7 +88,7 @@ void Password::Confirm(){
         msgBox->show();
         */
         MessageWindow *msg = new MessageWindow();
-        msg->message("Errore","Password errata");
+        msg->message(tr("Error"),tr("Wrong password"));
         delete msg;
 
     }

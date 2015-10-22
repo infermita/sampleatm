@@ -39,12 +39,12 @@ QPushButton:pressed
   background-color : #cccccc;
 }</string>
   </property>
-  <widget class="QLabel" name="mydata">
+  <widget class="QLabel" name="labal_day">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>20</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -242,7 +242,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>GIORNO</string>
+    <string>DAY</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -251,12 +251,12 @@ QPushButton:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="mydata_2">
+  <widget class="QLabel" name="label_month">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>170</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -454,7 +454,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>MESE</string>
+    <string>MONTH</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -463,12 +463,12 @@ QPushButton:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="mydata_3">
+  <widget class="QLabel" name="label_year">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>320</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -666,7 +666,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>ANNO</string>
+    <string>YEAR</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -675,12 +675,12 @@ QPushButton:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="mydata_4">
+  <widget class="QLabel" name="label_hours">
    <property name="geometry">
     <rect>
      <x>390</x>
      <y>20</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -878,7 +878,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>ORE</string>
+    <string>HOURS</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -887,12 +887,12 @@ QPushButton:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="mydata_5">
+  <widget class="QLabel" name="label_minutes">
    <property name="geometry">
     <rect>
      <x>390</x>
      <y>170</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -1090,7 +1090,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>MINUTI</string>
+    <string>MINUTES</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -1099,12 +1099,12 @@ QPushButton:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="mydata_6">
+  <widget class="QLabel" name="label_seconds">
    <property name="geometry">
     <rect>
      <x>390</x>
      <y>320</y>
-     <width>180</width>
+     <width>190</width>
      <height>150</height>
     </rect>
    </property>
@@ -1302,7 +1302,7 @@ QPushButton:pressed
     <number>0</number>
    </property>
    <property name="text">
-    <string>SECONDI</string>
+    <string>SECONDS</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -1329,7 +1329,7 @@ QPushButton:pressed
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="exit_2">
+   <widget class="QPushButton" name="exit">
     <property name="geometry">
      <rect>
       <x>970</x>
@@ -1355,7 +1355,7 @@ QPushButton:pressed
     </property>
    </widget>
   </widget>
-  <widget class="QSpinBox" name="giorno">
+  <widget class="QSpinBox" name="day">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -1374,7 +1374,7 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QSpinBox" name="mese">
+  <widget class="QSpinBox" name="month">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -1393,7 +1393,7 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QSpinBox" name="anno">
+  <widget class="QSpinBox" name="year">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -1412,10 +1412,10 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QSpinBox" name="ore">
+  <widget class="QSpinBox" name="hour">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>580</x>
      <y>20</y>
      <width>190</width>
      <height>150</height>
@@ -1431,10 +1431,10 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QSpinBox" name="minuti">
+  <widget class="QSpinBox" name="minute">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>580</x>
      <y>170</y>
      <width>190</width>
      <height>150</height>
@@ -1450,10 +1450,10 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QSpinBox" name="secondi">
+  <widget class="QSpinBox" name="second">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>580</x>
      <y>320</y>
      <width>190</width>
      <height>150</height>
@@ -1469,7 +1469,7 @@ QPushButton:pressed
     </font>
    </property>
   </widget>
-  <widget class="QPushButton" name="accetta">
+  <widget class="QPushButton" name="accept">
    <property name="geometry">
     <rect>
      <x>500</x>
@@ -1488,7 +1488,7 @@ QPushButton:pressed
     </font>
    </property>
    <property name="text">
-    <string>ACCETTA</string>
+    <string>ACCEPT</string>
    </property>
   </widget>
   <widget class="AnalogClock" name="analogClock">

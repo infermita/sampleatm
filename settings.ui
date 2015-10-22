@@ -96,7 +96,7 @@ QFrame {border:2px solid #FFFFFF }</string>
     <string>Impianti</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_6">
+  <widget class="QPushButton" name="tram">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -118,60 +118,8 @@ QFrame {border:2px solid #FFFFFF }</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Limitazione
-di corrente</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tram">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>10</y>
-     <width>300</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>DejaVu Sans</family>
-     <pointsize>20</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
-   </property>
-   <property name="text">
     <string>Impostazione
 N. Tram</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="impinati_8">
-   <property name="geometry">
-    <rect>
-     <x>950</x>
-     <y>10</y>
-     <width>300</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>DejaVu Sans</family>
-     <pointsize>20</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
-   </property>
-   <property name="text">
-    <string>RESET IDU
-(premere 3 volte)</string>
    </property>
   </widget>
   <widget class="QPushButton" name="impinati_9">
@@ -387,7 +335,7 @@ segnalazioni</string>
    <property name="geometry">
     <rect>
      <x>640</x>
-     <y>120</y>
+     <y>10</y>
      <width>611</width>
      <height>321</height>
     </rect>

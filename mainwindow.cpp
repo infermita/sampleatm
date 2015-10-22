@@ -112,7 +112,7 @@ void MainWindow::setWidget(QString widgetName)
                           )
                          );
     */
-    ui->context->tr(widgetName.toStdString().c_str());
+    ui->context->setText(tr("title"));
 
 
     //QMetaType::destroy(id, ptr1);
