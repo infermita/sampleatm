@@ -2,26 +2,26 @@
 #define CONSTANT_H
 
 #include <QString>
+#include <QObject>
+#include <QStringList>
 
 class Constant
 {
 public:
     Constant();
 
-    //Section widgetClassName
-    static QString ObFirstPage()       { return "FirstPage";}
-    static QString ObConduct()         { return  "Conduct";}
-    static QString ObPassword()        { return  "Password";}
-    static QString ObInstruments()     { return  "Instruments";}
-    static QString ObSettings()        { return  "Settings";}
-    static QString ObTram()            { return  "Tram";}
-    static QString ObData()            { return  "Data";}
-    static QString ObManualVideo()     { return  "ManualVideo";}
+    //Section widget Class Name and Title
+    static QStringList ObFirstPage()        { QStringList title; title <<  "FirstPage"    << QObject::tr("ENABLE");              return title;}
+    static QStringList ObConduct()          { QStringList title; title <<  "Conduct"      << QObject::tr("CONDUCT MENU");        return title;}
+    static QStringList ObPassword()         { QStringList title; title <<  "Password"     << QObject::tr("PASSWORD ENTRY");      return title;}
+    static QStringList ObInstruments()      { QStringList title; title <<  "Instruments"  << QObject::tr("INSTRUMENTS");         return title;}
+    static QStringList ObSettings()         { QStringList title; title <<  "Settings"     << QObject::tr("MAINTENANCE MENU");    return title;}
+    static QStringList ObTram()             { QStringList title; title <<  "Tram"         << QObject::tr("SETTING NUMBER TRAM"); return title;}
+    static QStringList ObData()             { QStringList title; title <<  "Data"         << QObject::tr("DATE TIME SETTING");   return title;}
+    static QStringList ObManualVideo()      { QStringList title; title <<  "ManualVideo"  << QObject::tr("MANUAL VIDEO");        return title;}
 
-    //Path oh con DB e language conf file
+    //Path configuration files and DB
     static QString PathConf()           { return "/etc/atm/";}
-    //Language file
-    static QString FileLanguage()       { return "language.ini";}
 
     //Db Name
     static QString DbName()             { return "db";}

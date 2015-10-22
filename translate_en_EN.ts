@@ -222,11 +222,6 @@
         <source>context</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="mainwindow.cpp" line="115"/>
-        <source>title</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ManualVideo</name>
@@ -327,6 +322,49 @@
     <message>
         <location filename="password.cpp" line="91"/>
         <source>Wrong password</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="lib/constant.h" line="14"/>
+        <source>ENABLE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="15"/>
+        <source>CONDUCT MENU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="16"/>
+        <source>PASSWORD ENTRY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="17"/>
+        <source>INSTRUMENTS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="18"/>
+        <source>MAINTENANCE MENU</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="19"/>
+        <source>SETTING NUMBER TRAM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="20"/>
+        <source>DATE TIME SETTING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="21"/>
+        <source>MANUAL VIDEO</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

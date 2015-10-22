@@ -12,7 +12,6 @@
 #include "manualvideo.h"
 #include "lib/dao.h"
 #include "lib/constant.h"
-#include "lib/language.h"
 #include <QTime>
 #include <QDateTime>
 #include <stdio.h>
@@ -67,7 +66,7 @@ void MainWindow::timerEvent(QTimerEvent *event)
     ui->mydata->setText(dateTimeString);
 
 }
-void MainWindow::setWidget(QString widgetName)
+void MainWindow::setWidget(QStringList widgetName)
 {
 
 
@@ -95,7 +94,7 @@ void MainWindow::setWidget(QString widgetName)
 
     }
 
-    char *widName = widgetName.toAscii().data();
+    char *widName = widgetName.at(0).toAscii().data();
 
 
     idWidget = QMetaType::type(widName);
@@ -112,7 +111,7 @@ void MainWindow::setWidget(QString widgetName)
                           )
                          );
     */
-    ui->context->setText(tr("title"));
+    ui->context->setText(widgetName.at(1));
 
 
     //QMetaType::destroy(id, ptr1);

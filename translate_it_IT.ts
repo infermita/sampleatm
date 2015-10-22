@@ -222,11 +222,6 @@
         <source>context</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="mainwindow.cpp" line="115"/>
-        <source>title</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>ManualVideo</name>
@@ -328,6 +323,49 @@
         <location filename="password.cpp" line="91"/>
         <source>Wrong password</source>
         <translation>Password errata</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="lib/constant.h" line="14"/>
+        <source>ENABLE</source>
+        <translation>ABILITAZIONE</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="15"/>
+        <source>CONDUCT MENU</source>
+        <translation>MENU&apos; CONDOTTA</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="16"/>
+        <source>PASSWORD ENTRY</source>
+        <translation>INSERIMENTO PASSWORD</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="17"/>
+        <source>INSTRUMENTS</source>
+        <translation>STRUMENTI</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="18"/>
+        <source>MAINTENANCE MENU</source>
+        <translation>MENU&apos; MANUTENZIONE</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="19"/>
+        <source>SETTING NUMBER TRAM</source>
+        <translation>IMPOSTAZIONE NUMERO TRAM</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="20"/>
+        <source>DATE TIME SETTING</source>
+        <translation>IMPOSTAZIONE DATA ORA</translation>
+    </message>
+    <message>
+        <location filename="lib/constant.h" line="21"/>
+        <source>MANUAL VIDEO</source>
+        <translation>VIDEO MANUALE</translation>
     </message>
 </context>
 <context>

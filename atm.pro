@@ -60,7 +60,6 @@ SOURCES +=\
     #lib/player.cpp
     lib/bean/videobean.cpp \
     lib/constant.cpp \
-    lib/language.cpp \
     conduct.cpp \
     instruments.cpp \
     settings.cpp \
@@ -82,7 +81,6 @@ HEADERS  += mainwindow.h \
     #lib/player.h
     lib/bean/videobean.h \
     lib/constant.h \
-    lib/language.h \
     conduct.h \
     instruments.h \
     settings.h \

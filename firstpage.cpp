@@ -5,7 +5,6 @@
 #include "firstpage.h"
 #include "ui_firstpage.h"
 #include "mainwindow.h"
-#include "lib/language.h"
 #include "lib/constant.h"
 
 FirstPage::FirstPage()
