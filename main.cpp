@@ -23,8 +23,6 @@ int main(int argc, char *argv[])
     qDebug() << QString("translate_") + locale;
     QTranslator translator;
     bool load = translator.load(QString("translate_") + locale,"/home/alberto/banana-ATM/tmp/atm");
-    //bool load = translator.load(QString("translate_") + locale);
-    qDebug() << "load " << load;
     a.installTranslator(&translator);
 
 

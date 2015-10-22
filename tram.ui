@@ -66,10 +66,10 @@ QLabel {border:none }</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Numero Tram :</string>
+     <string>Tram number:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tram">
+   <widget class="QLineEdit" name="tram_number">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -113,7 +113,7 @@ QLabel {border:none }</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="uno">
+   <widget class="QPushButton" name="one">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -135,7 +135,7 @@ QLabel {border:none }</string>
      <string>1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="due">
+   <widget class="QPushButton" name="two">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -157,7 +157,7 @@ QLabel {border:none }</string>
      <string>2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="tre">
+   <widget class="QPushButton" name="three">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -179,7 +179,7 @@ QLabel {border:none }</string>
      <string>3</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="quattro">
+   <widget class="QPushButton" name="four">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -201,7 +201,7 @@ QLabel {border:none }</string>
      <string>4</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cinque">
+   <widget class="QPushButton" name="five">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -223,7 +223,7 @@ QLabel {border:none }</string>
      <string>5</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="sei">
+   <widget class="QPushButton" name="six">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -245,7 +245,7 @@ QLabel {border:none }</string>
      <string>6</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="sette">
+   <widget class="QPushButton" name="seven">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -267,7 +267,7 @@ QLabel {border:none }</string>
      <string>7</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="otto">
+   <widget class="QPushButton" name="eight">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -289,7 +289,7 @@ QLabel {border:none }</string>
      <string>8</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="nove">
+   <widget class="QPushButton" name="nine">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -311,7 +311,7 @@ QLabel {border:none }</string>
      <string>9</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cancel">
+   <widget class="QPushButton" name="del">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -330,7 +330,7 @@ QLabel {border:none }</string>
      </font>
     </property>
     <property name="text">
-     <string>CANC</string>
+     <string>DEL</string>
     </property>
    </widget>
    <widget class="QPushButton" name="zero">

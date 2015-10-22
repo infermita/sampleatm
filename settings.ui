@@ -71,10 +71,10 @@ QFrame {border:2px solid #FFFFFF }</string>
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="impianti">
+  <widget class="QPushButton" name="installations">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>10</y>
      <width>300</width>
      <height>100</height>
@@ -93,13 +93,13 @@ QFrame {border:2px solid #FFFFFF }</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Impianti</string>
+    <string>Installations</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="tram">
+  <widget class="QPushButton" name="setting_n_tram">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>320</x>
      <y>10</y>
      <width>300</width>
      <height>100</height>
@@ -118,14 +118,14 @@ QFrame {border:2px solid #FFFFFF }</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Impostazione
+    <string>Setting
 N. Tram</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_9">
+  <widget class="QPushButton" name="warnings_second_level">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>320</x>
      <y>120</y>
      <width>300</width>
      <height>100</height>
@@ -144,15 +144,15 @@ N. Tram</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Segnalazioni
-attive nel sistema
-(II livello)</string>
+    <string>Active warnings 
+in the system
+(II level)</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="data">
+  <widget class="QPushButton" name="date_setting">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>320</x>
      <y>230</y>
      <width>300</width>
      <height>100</height>
@@ -171,14 +171,14 @@ attive nel sistema
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Impostazione
-data/ora</string>
+    <string>Date / Time 
+setting</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_11">
+  <widget class="QPushButton" name="msg_list">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>320</x>
      <y>340</y>
      <width>300</width>
      <height>100</height>
@@ -197,13 +197,13 @@ data/ora</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Lista messaggi</string>
+    <string>Message list</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_12">
+  <widget class="QPushButton" name="so_version">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>320</x>
      <y>450</y>
      <width>300</width>
      <height>100</height>
@@ -222,14 +222,14 @@ data/ora</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Informazione
-Stato Software</string>
+    <string>Software
+version</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_13">
+  <widget class="QPushButton" name="energy_meters">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>340</y>
      <width>300</width>
      <height>100</height>
@@ -248,14 +248,14 @@ Stato Software</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Contatori di
-energia</string>
+    <string>Energy
+meters</string>
    </property>
   </widget>
   <widget class="QPushButton" name="impinati_14">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>450</y>
      <width>300</width>
      <height>100</height>
@@ -278,10 +278,10 @@ energia</string>
 Monitor</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_15">
+  <widget class="QPushButton" name="warnings_first_level">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>120</y>
      <width>300</width>
      <height>100</height>
@@ -300,15 +300,15 @@ Monitor</string>
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Segnalazioni
-attive nel sistema
-(I livello)</string>
+    <string>Active warnings 
+in the system
+(I level)</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="impinati_16">
+  <widget class="QPushButton" name="reports">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>230</y>
      <width>300</width>
      <height>100</height>
@@ -327,21 +327,21 @@ attive nel sistema
     <string notr="true">font: 20pt &quot;DejaVu Sans&quot;;font: bold; </string>
    </property>
    <property name="text">
-    <string>Storico
-segnalazioni</string>
+    <string>Historical
+reports</string>
    </property>
   </widget>
   <widget class="QFrame" name="frame_2">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>630</x>
      <y>10</y>
-     <width>611</width>
-     <height>321</height>
+     <width>618</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QFrame {border:2px solid #FFFFFF }</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -349,12 +349,12 @@ segnalazioni</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="mydata_2">
+   <widget class="QLabel" name="label_video_surveillance">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>591</width>
+      <width>601</width>
       <height>51</height>
      </rect>
     </property>
@@ -543,7 +543,7 @@ segnalazioni</string>
      <number>0</number>
     </property>
     <property name="text">
-     <string>CONTROLLO VIDEO SORVEGLIANZA</string>
+     <string>Video Surveillance Control</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -552,13 +552,13 @@ segnalazioni</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideosorveglianza">
+   <widget class="QPushButton" name="go_to_video_survillance">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>591</width>
-      <height>111</height>
+      <width>601</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -574,16 +574,16 @@ segnalazioni</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Vai in Video Sorveglianza</string>
+     <string>Go to video survillance</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideomanuale">
+   <widget class="QPushButton" name="video_manual">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>190</y>
-      <width>290</width>
-      <height>121</height>
+      <y>170</y>
+      <width>298</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -599,16 +599,16 @@ segnalazioni</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Manuale</string>
+     <string>Manual</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="vaivideoautomatica">
+   <widget class="QPushButton" name="video_automatic">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>190</y>
-      <width>290</width>
-      <height>121</height>
+      <x>313</x>
+      <y>170</y>
+      <width>298</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -624,7 +624,7 @@ segnalazioni</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Automatica</string>
+     <string>Automatic</string>
     </property>
    </widget>
   </widget>

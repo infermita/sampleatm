@@ -21,8 +21,8 @@ void Settings::setWidget(QWidget *parent)
     ui = new Ui::Settings;
     ui->setupUi(parent);
     connect(ui->exit, SIGNAL (clicked()),this, SLOT (Exit()),Qt::DirectConnection);
-    connect(ui->tram, SIGNAL (clicked()),this, SLOT (Tram()),Qt::DirectConnection);
-    connect(ui->data, SIGNAL (clicked()),this, SLOT (Data()),Qt::DirectConnection);
+    connect(ui->setting_n_tram, SIGNAL (clicked()),this, SLOT (Tram()),Qt::DirectConnection);
+    connect(ui->date_setting, SIGNAL (clicked()),this, SLOT (Data()),Qt::DirectConnection);
 }
 void Settings::Exit()
 {
