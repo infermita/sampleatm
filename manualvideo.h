@@ -27,33 +27,16 @@ public:
 private slots:
         void Exit();
         void Play(QString id);
-        void Stop();
-        void SlotBuffer(int idWin,int val);
 
 
 private:
     Ui::ManualVideo *ui;
-    QToolButton *m_playButton;
-    int num;
-    int i;
-    libvlc_media_player_t *media_players[4];
-    libvlc_instance_t *inst;
-    libvlc_event_manager_t *p_e[4];
-    static void callbacks( const libvlc_event_t* event, void* self );
     void CreateButton();
     void RemoveButton();
-    QList< QHash<QString,QString> > listCam;
-    QWidget *video;
-    int timerId;
 
 
 signals:
-    void SignalBuffer(int idWin,int val);
-
-protected:
-    void timerEvent(QTimerEvent *event);
-    void mousePressEvent(QMouseEvent *qevent);
-    void mouseReleaseEvent(QMouseEvent *);
+    void PlayVideo(QString idCam,QString method);
 
 
 };

@@ -5,6 +5,8 @@
 #include <QLibraryInfo>
 
 #include "mainwindow.h"
+#include "lib/constant.h"
+#include "lib/threads/mvbthread.h"
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
@@ -22,12 +24,14 @@ int main(int argc, char *argv[])
     QString locale = QLocale::system().name();
     qDebug() << QString("translate_") + locale;
     QTranslator translator;
-    bool load = translator.load(QString("translate_") + locale,"/home/alberto/banana-ATM/tmp/atm");
+    bool load = translator.load(QString("translate_") + locale,Constant::PathConf());
     a.installTranslator(&translator);
 
 
     MainWindow w;
     w.show();
+
+
 
     return a.exec();
 }

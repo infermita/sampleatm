@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "dynamicwidget.h"
+#include "lib/videoplayer.h"
+#include "lib/threads/mvbthread.h"
+#include <vlc.h>
 #include <QMainWindow>
 
 namespace Ui {
@@ -18,6 +21,9 @@ public:
     void setWidget(QStringList widgetName);
     void setTram(QString tram);
     Ui::MainWindow *ui;
+    libvlc_instance_t *inst;
+    VideoPlayer *vd;
+
 
 private:
 
@@ -25,6 +31,11 @@ private:
     DynamicWidget *ptr1;
     static MainWindow* instance;
     int idWidget;
+    MvbThread *th;
+
+
+private slots:
+
 
 protected:
     void timerEvent(QTimerEvent *event);

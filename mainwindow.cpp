@@ -51,6 +51,22 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
+    const char * const argv[] = {
+            "-I", "dummy",    // Don't use any interface
+            "--ignore-config",    // Don't use VLC's config
+        "--no-xlib","--no-audio","--sub-filter=marq","--sub-source=marq"
+
+
+
+        };
+    inst = libvlc_new(sizeof(argv) / sizeof(argv[0]), argv);
+
+    //QTimer::singleShot(5000, this, SLOT(PlayVideo()));
+    vd = new VideoPlayer();
+    th = new MvbThread();
+    th->Start();
+
+
 }
 
 MainWindow::~MainWindow()
@@ -64,6 +80,7 @@ void MainWindow::timerEvent(QTimerEvent *event)
     QDateTime dateTime = QDateTime::currentDateTime();
     QString dateTimeString = dateTime.toString("dd-MM-yy\nhh:mm:ss");
     ui->mydata->setText(dateTimeString);
+
 
 }
 void MainWindow::setWidget(QStringList widgetName)
@@ -123,6 +140,7 @@ void MainWindow::setTram(QString tram){
     ui->serialbus->setText(tram);
 
 }
+
 
 
 

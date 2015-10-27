@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += sql
+QT       += network
 #QT       += phonon
 
 
@@ -63,7 +64,9 @@ SOURCES +=\
     conduct.cpp \
     instruments.cpp \
     settings.cpp \
-    manualvideo.cpp
+    manualvideo.cpp \
+    lib/videoplayer.cpp \
+    lib/threads/mvbthread.cpp
 
 HEADERS  += mainwindow.h \
     firstpage.h \
@@ -84,7 +87,9 @@ HEADERS  += mainwindow.h \
     conduct.h \
     instruments.h \
     settings.h \
-    manualvideo.h
+    manualvideo.h \
+    lib/videoplayer.h \
+    lib/threads/mvbthread.h
 
 FORMS    += mainwindow.ui \
     firstpage.ui \
